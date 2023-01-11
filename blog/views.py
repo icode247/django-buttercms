@@ -2,7 +2,7 @@ from butter_cms import ButterCMS
 from django.shortcuts import render
 from django.http import Http404
 import os
-client = ButterCMS("ff0d0ebeeea392595b63eee76abdc2424e788e16")
+client = ButterCMS("YOUR API KEY")
 
 def Index(request, page = 1):
     response = client.posts.all({'page_size': 10, 'page': page})
