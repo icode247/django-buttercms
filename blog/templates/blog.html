@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+
+    <title>Blog Template</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:creator" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="{% static 'stylec.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- BEGIN BLOG HEADER -->
+    <div class="section-blog-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 col-sm-12">
+            <h3>
+              Join thousands of subscribers and get our monthly newsletter!
+            </h3>
+            <form action="" method="post">
+              <input
+                type="email"
+                value=""
+                name="EMAIL"
+                class="required email"
+                placeholder="Email Address"
+              />
+              <input
+                type="submit"
+                value="Subscribe"
+                name="subscribe"
+                id="mc-embedded-subscribe"
+                class="button"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END BLOG HEADER -->
+
+    <!-- BEGIN BLOG POST -->
+    <div class="section-blog-post">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="post-container">
+              <a class="back" href="/">Back to all posts</a>
+
+              <h1>{{post.title}}</h1>
+
+              <span class="by"
+                >Posted by <strong>{{post.author.last_name}} {{post.author.first_name}}</strong> on
+                <strong>{{ post.published }}</strong></span
+              >
+
+              <div class="featured-image">
+                <img
+                  src="{{ post.featured_image }}"
+                  width="100%"
+                />
+              </div>
+
+              <div class="post-body">
+                <p>
+                  {{ post.body|safe }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
